@@ -1,4 +1,4 @@
-package com.learning.TestNGProject;
+package learning;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
