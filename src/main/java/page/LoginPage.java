@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.testng.Assert;
 
 public class LoginPage {
 	
@@ -18,6 +19,7 @@ public class LoginPage {
 	@FindBy(how=How.XPATH,using="//input[@id='username']")WebElement USER_NAME;
 	@FindBy(how=How.XPATH,using="//input[@id='password']")WebElement PASS_WORD;
 	@FindBy(how=How.NAME,using="login")WebElement SIGNIN_BUTTON;
+	@FindBy(how=How.XPATH,using="/html/body/div/div/div/div[2]")WebElement INVALID_TEXT;
 	
 	
 	//Methods
@@ -34,6 +36,24 @@ public class LoginPage {
 	public void login()
 	{
 		SIGNIN_BUTTON.click();
+	}
+	
+	public boolean checkIfInvalidUserTextAppeared()
+	{
+		if(INVALID_TEXT.getText().trim().equals("×\n"
+				+ "Invalid Username or Password"))
+		{
+			return true;
+		}
+		return false;
+		
+	}
+	
+	public void informInvalidUserTextAppeared()
+	{
+		Assert.assertEquals(INVALID_TEXT.getText().trim(),"×\n"
+				+ "Invalid Username or Password","Invalid Login!");
+
 	}
 
 }

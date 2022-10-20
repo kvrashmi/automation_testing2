@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-17T18:04:05 CDT" name="Default suite" finished-at="2022-10-17T18:04:14 CDT" duration-ms="9019">
+  <suite started-at="2022-10-20T08:09:04 CDT" name="Default suite" finished-at="2022-10-20T08:09:14 CDT" duration-ms="10740">
     <groups>
     </groups>
-    <test started-at="2022-10-17T18:04:05 CDT" name="Default test" finished-at="2022-10-17T18:04:14 CDT" duration-ms="9019">
-      <class name="test.NewCustomerTest">
-        <test-method signature="validUserShouldBeAbleToLogin()[pri:1, instance:test.NewCustomerTest@258e2e41]" started-at="2022-10-17T18:04:05 CDT" name="validUserShouldBeAbleToLogin" finished-at="2022-10-17T18:04:09 CDT" duration-ms="3649" status="PASS">
+    <test started-at="2022-10-20T08:09:04 CDT" name="Default test" finished-at="2022-10-20T08:09:14 CDT" duration-ms="10740">
+      <class name="test.NewAccountTest">
+        <test-method signature="validUserShouldBeAbleToLogin()[pri:1, instance:test.NewAccountTest@f2f2cc1]" started-at="2022-10-20T08:09:04 CDT" name="validUserShouldBeAbleToLogin" finished-at="2022-10-20T08:09:08 CDT" duration-ms="4743" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserShouldBeAbleToLogin -->
-        <test-method signature="checkDashboardLaunch()[pri:2, instance:test.NewCustomerTest@258e2e41]" started-at="2022-10-17T18:04:09 CDT" name="checkDashboardLaunch" finished-at="2022-10-17T18:04:09 CDT" duration-ms="841" status="PASS">
+        <test-method signature="createNewAccount()[pri:2, instance:test.NewAccountTest@f2f2cc1]" started-at="2022-10-20T08:09:08 CDT" name="createNewAccount" finished-at="2022-10-20T08:09:14 CDT" duration-ms="5951" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkDashboardLaunch -->
-        <test-method signature="checkNewCustomerCreation()[pri:3, instance:test.NewCustomerTest@258e2e41]" started-at="2022-10-17T18:04:09 CDT" name="checkNewCustomerCreation" finished-at="2022-10-17T18:04:14 CDT" duration-ms="4494" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkNewCustomerCreation -->
-      </class> <!-- test.NewCustomerTest -->
+        </test-method> <!-- createNewAccount -->
+      </class> <!-- test.NewAccountTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

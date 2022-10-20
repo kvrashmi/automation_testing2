@@ -35,5 +35,9 @@ public class BasePage {
 		{
 			wait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.xpath(locatorText),By.tagName("option")));
 		}
+		else if(elemType.equals("Link"))
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(locatorText))));
+		}
 	}
 }

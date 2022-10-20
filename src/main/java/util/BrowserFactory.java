@@ -14,7 +14,7 @@ public class BrowserFactory {
 	
 	public static WebDriver init()
 	{
-		HashMap<String,String> configFileProps = Helper.readConfigFile();
+		HashMap<String,String> configFileProps = ConfigReader.readConfigFile();
 		System.out.println(configFileProps);
 		browser=configFileProps.get("browser");
 		url=configFileProps.get("url");
