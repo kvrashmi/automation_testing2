@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-20T08:09:04 CDT" name="Default suite" finished-at="2022-10-20T08:09:14 CDT" duration-ms="10740">
+  <suite started-at="2022-10-21T13:13:24 CDT" name="Default suite" finished-at="2022-10-21T13:13:31 CDT" duration-ms="7014">
     <groups>
     </groups>
-    <test started-at="2022-10-20T08:09:04 CDT" name="Default test" finished-at="2022-10-20T08:09:14 CDT" duration-ms="10740">
-      <class name="test.NewAccountTest">
-        <test-method signature="validUserShouldBeAbleToLogin()[pri:1, instance:test.NewAccountTest@f2f2cc1]" started-at="2022-10-20T08:09:04 CDT" name="validUserShouldBeAbleToLogin" finished-at="2022-10-20T08:09:08 CDT" duration-ms="4743" status="PASS">
+    <test started-at="2022-10-21T13:13:24 CDT" name="Default test" finished-at="2022-10-21T13:13:31 CDT" duration-ms="7014">
+      <class name="test.NewDepositTest">
+        <test-method signature="validUserShouldBeAbleToLogin()[pri:1, instance:test.NewDepositTest@6107227e]" started-at="2022-10-21T13:13:24 CDT" name="validUserShouldBeAbleToLogin" finished-at="2022-10-21T13:13:29 CDT" duration-ms="4610" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUserShouldBeAbleToLogin -->
-        <test-method signature="createNewAccount()[pri:2, instance:test.NewAccountTest@f2f2cc1]" started-at="2022-10-20T08:09:08 CDT" name="createNewAccount" finished-at="2022-10-20T08:09:14 CDT" duration-ms="5951" status="PASS">
+        <test-method signature="createNewDeposit()[pri:2, instance:test.NewDepositTest@6107227e]" started-at="2022-10-21T13:13:29 CDT" name="createNewDeposit" finished-at="2022-10-21T13:13:31 CDT" duration-ms="2366" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createNewAccount -->
-      </class> <!-- test.NewAccountTest -->
+        </test-method> <!-- createNewDeposit -->
+      </class> <!-- test.NewDepositTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

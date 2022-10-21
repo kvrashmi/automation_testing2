@@ -6,13 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.testng.Assert;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 	
 	WebDriver driver;
 	
 	public LoginPage(WebDriver driver)
 	{
-		this.driver=driver;
+		super(driver);
+		this.driver = driver;
 	}
 	
 	//WebElements List

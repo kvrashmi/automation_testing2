@@ -40,9 +40,9 @@ WebDriver driver;
 		nap.clickNewAccountLink();
 		ExcelReader rd = new ExcelReader("//Users//rashmikanduluvavikraman//selenium-workspace//TestNGProject//src//main//java//testdata//TestNGProject1.xlsx");
 		List<Map<String,String>> lMap = rd.getSheetData("NewAccountPage");
-		Map<String,String> map= lMap.get(0);
+		Map<String,String> map= lMap.get(0); //Data from which row
 		
-		String accountTitle=map.get("AccountTitle");
+		String accountTitle=map.get("AccountTitle"); //
 		String description = map.get("Description");
 		String initialBalance =map.get("InitialBalance");
 		String accountNumber =map.get("AccountNumber");
@@ -60,6 +60,7 @@ WebDriver driver;
 		
 		Thread.sleep(3000);
 		nap.clickCreateAccount();
+		Thread.sleep(3000);
 		BrowserFactory.tearDown();
 	}
 	

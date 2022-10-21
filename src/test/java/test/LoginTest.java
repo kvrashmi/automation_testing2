@@ -25,7 +25,6 @@ public class LoginTest {
 		driver=BrowserFactory.init();
 		LoginPage lp=PageFactory.initElements(driver, LoginPage.class);
 		Map<String,String> myMap =JSONReader.readJSONFileForSimpleJSON();
-		System.out.println("What is username:"+myMap.get("username"));
 		lp.inputUserName(myMap.get("username"));
 		lp.inputPassWord(myMap.get("password"));
 		lp.login();
@@ -33,9 +32,7 @@ public class LoginTest {
 		dp.checkIfDashBoardIsLaunched();
 		BrowserFactory.tearDown();
 	}
-	
-	
-	
+		
 	@Test(priority=2)
 	public void checkAllComboOfUserNameAndPasswordsToLogin() throws IOException, ParseException, org.json.simple.parser.ParseException
 	{

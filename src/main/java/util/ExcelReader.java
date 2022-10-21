@@ -19,7 +19,7 @@ public class ExcelReader {
 	// Global Variables
 	public String path;
 	public FileInputStream fis = null;
-	private XSSFWorkbook workbook = null;
+	private XSSFWorkbook workbook = null; //
 	private XSSFSheet sheet = null;
 	private XSSFRow row = null;
 	private XSSFCell cell = null;
@@ -65,36 +65,40 @@ public class ExcelReader {
 		return cell.getStringCellValue();
 	}
 	
+			
 	public List<Map<String,String>> getSheetData(String sheetName) throws IOException
 	{
-		List<Map<String,String>> listOfMaps= new ArrayList<Map<String,String>>();
-		ArrayList<String> headers = new ArrayList<String>();
-		Map<String,String> map = new HashMap<String,String>();
+		List<Map<String,String>> listOfMaps= new ArrayList<Map<String,String>>(); // This is the return data
+		
+		ArrayList<String> headers = new ArrayList<String>();  //This is used to keep my headers frm each sheet
+		
 		
 		// For Sheet
-		int index = workbook.getSheetIndex(sheetName);
-		sheet = workbook.getSheetAt(index);
+		int index = workbook.getSheetIndex(sheetName); //LoginPage (0)
+		sheet = workbook.getSheetAt(index); // You got the index now load that sheet
 	
 		//Row 0 is the first row - which has all the heading/titles - 
 		//put it in a arraylist
 		row=sheet.getRow(0);
+		                   
 		for(int i=0;i<row.getLastCellNum();i++)
-		{
+		{                                                                 
 			headers.add(i,row.getCell(i).getStringCellValue().trim());
 		}
-		//System.out.println(headers);
+		System.out.println("Headers:"+headers);
 		
-		row=sheet.getRow(1);
-		int maxRow = sheet.getLastRowNum();
+		row=sheet.getRow(1); // First data row
+		int maxRow = sheet.getLastRowNum();//Till last row of data we need
 		for(int rowCount=1;rowCount<=maxRow;rowCount++)
 		{
+			Map<String,String> map = new HashMap<String,String>(); // Actual Data is here {"username":.. ,"passowrd:"bkj"}
 			int col=0;
 			while(col<row.getLastCellNum())
 			{
 				Cell cell1 = sheet.getRow(rowCount).getCell(col);   
                 switch (cell1.getCellType()) 
                 {
-                	case Cell.CELL_TYPE_STRING:
+                	case Cell.CELL_TYPE_STRING: //demo@techfios.com
                 		map.put(headers.get(col),cell1.getRichStringCellValue().getString());
                 		System.out.println(cell1.getRichStringCellValue().getString());
                 		break;
@@ -119,19 +123,30 @@ public class ExcelReader {
                     
                 	case Cell.CELL_TYPE_FORMULA:
 	                	map.put(headers.get(col),String.valueOf(cell1.getCellFormula()));
+	                	
 	                    System.out.println(cell1.getCellFormula());
 	                    break;
                     
                 	default:
                 		System.out.println();
-               }
-               col++; 
-            }
-				
+               }// end of switch  
+               col++;   
+            } // end of while
+			listOfMaps.add(map);
+			System.out.println("Map:"+map);	
+			
 		}
-		listOfMaps.add(map);
-		this.workbook.close();
-		return listOfMaps;
 		
+		System.out.println("List Of Map:"+listOfMaps);
+		this.workbook.close();
+		return listOfMaps;	
 	}
+	
+	/*
+	public static void main(String[] args) throws IOException
+	{
+		ExcelReader exRd=new ExcelReader("//Users//rashmikanduluvavikraman//selenium-workspace//TestNGProject//src//main//java//testdata//TestNGProject1.xlsx");
+		exRd.getSheetData("LoginPage");
+	}
+	*/
 }

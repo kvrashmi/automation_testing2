@@ -28,6 +28,12 @@ public class BasePage {
 		sel.selectByVisibleText(visibleText);
 	}
 
+	public void selectFromDropDown(WebElement element,int index)
+	{
+		Select sel=new Select(element);
+		sel.selectByIndex(index);
+	}
+	
 	public void explicitlyWaitForElements(String elemType,String locatorText)
 	{
 		WebDriverWait wait = new WebDriverWait(this.driver,30);
