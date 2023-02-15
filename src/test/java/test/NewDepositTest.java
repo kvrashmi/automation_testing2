@@ -1,7 +1,5 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,8 +38,8 @@ WebDriver driver;
 		CSVReaderHelper csv_helper = new CSVReaderHelper("//Users//rashmikanduluvavikraman//selenium-workspace//TestNGProject//src//main//java//testdata//TestNGProject1.csv");
 		List<Map<String,String>> lmap = csv_helper.readCSVFileUsingOpenCSV();
 		Map<String,String> map = lmap.get(0);
-		System.out.println(map.size());
-		System.out.println(map.values());
+		//System.out.println(map.size());
+		//System.out.println(map.values());
 		NewDepositPage ndp = PageFactory.initElements(driver, NewDepositPage.class);
 		ndp.clickTransactionLink();
 		ndp.clickDepositLink();
@@ -57,9 +55,5 @@ WebDriver driver;
 		ndp.clickDeposit();
 		BrowserFactory.tearDown();
 	}
-	/*
-	{FilePath=//Users//rashmikanduluvavikraman//selenium-workspace//TestNGProject//src//main//java//testdata//TestNGProject2.csv,
-			﻿Account=Techfios, Description=RKV-Test, Category=Salary, Ref#=1001, Amount=2000, Method=Credit Card, Payee=Rashmi3, Date=10/22/22, Tags=Techfios}
-	*/
-	}
+}
 			
